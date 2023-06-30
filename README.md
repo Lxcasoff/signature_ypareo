@@ -12,26 +12,28 @@ Avant de pouvoir exécuter le script, assurez-vous d'avoir les éléments suivan
 
 ## Installation
 
-1. Clonez ce dépôt GitHub sur votre machine :
-
-   ```
-   git clone https://github.com/Lxcasoff/signature_ypareo.git
-   ```
-
-2. Accédez au répertoire du projet :
-
-   ```
-   cd signature_ypareo
-   ```
-
-   
-3. Installation prerequis
+1. Installation prerequis
 ```
 brew install python3
 brew install pip 
 brew install chromium-chromedriver
 pip install selenium
 ```
+
+2. Clonez ce dépôt GitHub sur votre machine :
+
+   ```
+   git clone https://github.com/Lxcasoff/signature_ypareo.git
+   ```
+
+3. Accédez au répertoire du projet :
+
+   ```
+   cd signature_ypareo
+   ```
+
+   
+
 
 ## Configuration
 
