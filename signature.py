@@ -9,7 +9,7 @@ os.environ["webdriver.chrome.driver"] = "/usr/local/bin/chromedriver"
 webdriver_service = Service("/usr/local/bin/chromedriver")
 driver = webdriver.Chrome(service=webdriver_service)
 
-LOGIN_URL = 'https://ecole-ipssi.ymag.cloud/index.php/login/'
+LOGIN_URL = ''
 USERNAME = ''
 PASSWORD = ''
 

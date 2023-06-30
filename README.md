@@ -23,7 +23,7 @@ Avant de pouvoir exécuter le script, assurez-vous d'avoir les éléments suivan
    ```
    cd signature_ypareo
    ```
-   
+
    
 3. Installation prerequis
 ```
@@ -37,9 +37,11 @@ pip install selenium
 
 Avant de lancer le script, vous devez configurer certaines variables dans le fichier `signature.py` :
 
-- `LOGIN_URL` : l'URL de la page de connexion.
-- `USERNAME` : votre nom d'utilisateur pour vous connecter.
-- `PASSWORD` : votre mot de passe pour vous connecter.
+```python
+LOGIN_URL = ''
+USERNAME = ''
+PASSWORD = ''
+```
 
 ## Exécution
 
