@@ -15,14 +15,15 @@ Avant de pouvoir exécuter le script, assurez-vous d'avoir les éléments suivan
 1. Clonez ce dépôt GitHub sur votre machine :
 
    ```
-   git clone https://github.com/votre-utilisateur/votre-depot.git
+   git clone https://github.com/Lxcasoff/signature_ypareo.git
    ```
 
 2. Accédez au répertoire du projet :
 
    ```
-   cd votre-depot
+   cd signature_ypareo
    ```
+   
    
 3. Installation prerequis
 ```
