@@ -5,6 +5,8 @@ Ce script en Python permet de se connecter à un site web, remplir les informati
 
 ## Prérequis
 
+- MacOS
+
 Avant de pouvoir exécuter le script, assurez-vous d'avoir les éléments suivants installés sur votre machine :
 
 - Python 3 : [Téléchargement de Python](https://www.python.org/downloads/)
