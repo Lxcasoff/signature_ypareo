@@ -1,17 +1,23 @@
 import time
+import os
+import json
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
-import os
+
+# Chargement des identifiants à partir du fichier JSON
+with open('credentials.json') as f:
+    credentials = json.load(f)
+USERNAME = credentials['username']
+PASSWORD = credentials['password']
 
 os.environ["webdriver.chrome.driver"] = "/usr/local/bin/chromedriver"
 webdriver_service = Service("/usr/local/bin/chromedriver")
 driver = webdriver.Chrome(service=webdriver_service)
 
-LOGIN_URL = ''
-USERNAME = ''
-PASSWORD = ''
+#renseigner l'url de connexion
+LOGIN_URL = ' '
 
 print("Début du script")
 
@@ -53,13 +59,13 @@ except Exception as e:
     exit()
     
 while True:
-        try:
-            sign_button = driver.find_element(By.NAME, "sign_button")
-            sign_button.click()
-            time.sleep(5)      
-            sign_button.click()           
-            break
-        except:
-            time.sleep(10)
+    try:
+        sign_button = driver.find_element(By.NAME, "sign_button")
+        sign_button.click()
+        time.sleep(5)
+        sign_button.click()           
+        break
+    except:
+        time.sleep(10)
 
 print("Fin du script")
