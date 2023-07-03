@@ -24,15 +24,15 @@ pip install selenium
 
 2. Clonez ce dépôt GitHub sur votre machine :
 
-   ```
-   git clone https://github.com/Lxcasoff/signature_ypareo.git
-   ```
+```
+git clone https://github.com/Lxcasoff/signature_ypareo.git
+```
 
 3. Accédez au répertoire du projet :
 
-   ```
-   cd signature_ypareo
-   ```
+```
+cd signature_ypareo
+```
 
    
 
