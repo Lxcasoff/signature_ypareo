@@ -1,10 +1,12 @@
 import time
-import os
 import json
 from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
+
+options = webdriver.ChromeOptions()
+options.add_argument('--no-sandbox')
+options.add_argument('--disable-dev-shm-usage')
+options.add_argument('--remote-debugging-port=9222')
 
 # Chargement des identifiants à partir du fichier JSON
 with open('credentials.json') as f:
@@ -12,18 +14,14 @@ with open('credentials.json') as f:
 USERNAME = credentials['username']
 PASSWORD = credentials['password']
 
-os.environ["webdriver.chrome.driver"] = "/usr/local/bin/chromedriver"
-webdriver_service = Service("/usr/local/bin/chromedriver")
-driver = webdriver.Chrome(service=webdriver_service)
-
-#renseigner l'url de connexion
-LOGIN_URL = ' '
+# Renseigner l'URL de connexion
+LOGIN_URL = 'https://ecole-ipssi.ymag.cloud/index.php/login/'
 
 print("Début du script")
 
 try:
     print("Lancement du navigateur...")
-    driver = webdriver.Chrome(service=webdriver_service)
+    driver = webdriver.Chrome(options=options)
     print("Navigateur lancé.")
 except Exception as e:
     print("Une erreur s'est produite lors du lancement du navigateur.")
@@ -60,12 +58,27 @@ except Exception as e:
     
 while True:
     try:
-        sign_button = driver.find_element(By.NAME, "sign_button")
+        sign_button = driver.find_element(By.NAME, "btn btn-primary btn-submit js-btn-signer")
         sign_button.click()
         time.sleep(5)
         sign_button.click()           
         break
     except:
+        print("Bouton 'signer' non trouvé. Rechargement de la page...")
+        driver.refresh()  # Recharge la page
+        time.sleep(10)
+        
+while True:
+    try:
+        enregister_button = driver.find_element(By.NAME, "btn btn-primary btn-submit js-enregistrer-signature")
+        enregister_button.click()
+        time.sleep(5)
+        enregister_button.click()           
+        break
+    except:
         time.sleep(10)
 
 print("Fin du script")
+
+driver.quit()   # Ferme le navigateur
+
